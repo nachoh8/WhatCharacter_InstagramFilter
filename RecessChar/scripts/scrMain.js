@@ -3,8 +3,6 @@
 // Instagram: @nachohseara
 //==============================================================================
 
-//TODO: mejorar reconocimiento por region/idioma para elegir la pregunta
-
 /// Load Packages
 const Scene = require('Scene');
 const Textures = require('Textures');
@@ -25,16 +23,20 @@ switch (localeSet[0]) {
     case 'es': // Spanish
         if (localeSet[1] === 'ES') { // Spain
             materialPic.diffuse = Textures.get('question_es');
-            Diagnostics.log('Hola ES');
+            Diagnostics.log('Hola_es ' + localeSet);
         } else { // Latin America
             materialPic.diffuse = Textures.get('question_es_lat');
-            Diagnostics.log('Hola ES_LAT');
+            Diagnostics.log('Hola_lat ' + localeSet);
         }
       break;
+    case 'it': // Italian
+        materialPic.diffuse = Textures.get('question_it');
+        Diagnostics.log('Ciao ' + localeSet);
+        break;
     default: // English
-      materialPic.diffuse = Textures.get('question_en');
-      Diagnostics.log('Hello');
-      break;
+        materialPic.diffuse = Textures.get('question_en');
+        Diagnostics.log('Hello ' + localeSet);
+        break;
 }
 
 /// Create array of pictures
